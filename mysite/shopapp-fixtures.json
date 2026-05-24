@@ -1,0 +1,173 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "Laptop",
+      "description": "On the other hand",
+      "price": "1999.00",
+      "discount": 5,
+      "created_at": "2025-09-01T20:18:56.258Z",
+      "archived": true,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 8,
+    "fields": {
+      "name": "Desktop (new)",
+      "description": "it's very smart",
+      "price": "2399.00",
+      "discount": 15,
+      "created_at": "2025-09-01T20:18:56.258Z",
+      "archived": true,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 9,
+    "fields": {
+      "name": "Smartphone",
+      "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+      "price": "987.00",
+      "discount": 25,
+      "created_at": "2025-09-01T20:18:56.258Z",
+      "archived": true,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 11,
+    "fields": {
+      "name": "Tablet",
+      "description": "great tablet",
+      "price": "1234.00",
+      "discount": 0,
+      "created_at": "2025-09-14T21:48:33.000Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 13,
+    "fields": {
+      "name": "Phone 3",
+      "description": "phone 3",
+      "price": "999.42",
+      "discount": 12,
+      "created_at": "2025-09-15T09:25:47.420Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 14,
+    "fields": {
+      "name": "Tablet 2",
+      "description": "a new tablet",
+      "price": "1500.00",
+      "discount": 15,
+      "created_at": "2025-09-15T09:28:17.651Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 15,
+    "fields": {
+      "name": "Phone 4",
+      "description": "a new phone",
+      "price": "20500.00",
+      "discount": 10,
+      "created_at": "2025-09-19T11:44:43.183Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 16,
+    "fields": {
+      "name": "TV-a",
+      "description": "android TV",
+      "price": "30000.00",
+      "discount": 10,
+      "created_at": "2025-09-21T15:54:26.425Z",
+      "archived": false,
+      "created_by": 2
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 17,
+    "fields": {
+      "name": "TV-s",
+      "description": "sber TV",
+      "price": "10000.00",
+      "discount": 50,
+      "created_at": "2025-09-21T16:12:18.394Z",
+      "archived": false,
+      "created_by": 3
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 18,
+    "fields": {
+      "name": "TV-s FHD",
+      "description": "sber TV - 1920x1080",
+      "price": "5000.00",
+      "discount": 70,
+      "created_at": "2025-09-21T16:41:47.164Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 19,
+    "fields": {
+      "name": "corset",
+      "description": "dark corset",
+      "price": "15000.00",
+      "discount": 0,
+      "created_at": "2025-09-21T17:14:22.157Z",
+      "archived": false,
+      "created_by": 4
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 3,
+    "fields": {
+      "delivery_address": "MSK",
+      "promocode": "",
+      "created_at": "2025-09-15T23:09:36.352Z",
+      "user": 1,
+      "products": [
+        11,
+        14
+      ]
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 4,
+    "fields": {
+      "delivery_address": "ekb, Lenina 63",
+      "promocode": "meow-meow",
+      "created_at": "2025-09-19T20:28:05.264Z",
+      "user": 1,
+      "products": [
+        13,
+        15
+      ]
+    }
+  }
+]

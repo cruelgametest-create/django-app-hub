@@ -1,0 +1,16 @@
+{% extends 'requestdataapp/base.html' %}
+
+{% block title %}
+    File upload
+{% endblock %}
+
+{% block body %}
+    <h1>Upload file</h1>
+    <div>The max size for a file is {{ max_size }} Megabyte</div>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token%}
+    {{ form.as_p }}
+
+    <button type="submit">Upload</button>
+    </form>
+{% endblock %}
