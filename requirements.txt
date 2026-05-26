@@ -2,18 +2,23 @@ asgiref==3.11.1
 attrs==26.1.0
 certifi==2026.4.22
 Django==6.0.3
-django-debug-toolbar==6.3.0
+-e git+https://github.com/django-commons/django-debug-toolbar.git@a9c6988c627f165425527eb500ca769787434f2e#egg=django_debug_toolbar
 django-filter==25.2
+django-stubs==6.0.3
+django-stubs-ext==6.0.3
 django_templates==0.0.13
 djangorestframework==3.14.0
+djangorestframework-stubs==3.16.9
 docutils==0.22.4
 drf-spectacular==0.29.0
 flake8==7.3.0
 flake8-docstrings==1.7.0
+gunicorn==26.0.0
 inflection==0.5.1
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
 mccabe==0.7.0
+packaging==26.2
 pillow==11.3.0
 pycodestyle==2.14.0
 pydocstyle==6.3.0
@@ -25,6 +30,7 @@ rpds-py==0.30.0
 sentry-sdk==2.58.0
 snowballstemmer==3.0.1
 sqlparse==0.5.3
+types-PyYAML==6.0.12.20260408
 typing_extensions==4.15.0
 uritemplate==4.2.0
 urllib3==2.6.3

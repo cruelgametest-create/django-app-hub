@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+from logging import disable
+from os import getenv
 from pathlib import Path
+import logging.config
 
 from django.conf.global_settings import LOGIN_REDIRECT_URL, MEDIA_URL, MEDIA_ROOT, CACHE_MIDDLEWARE_SECONDS
 from django.urls import reverse_lazy as _
@@ -19,21 +21,27 @@ from django.utils.translation import gettext_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DATABASE_DIR = BASE_DIR / "database"
+DATABASE_DIR.mkdir(exist_ok=True)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hq&wo0*nl!*is-vpr^o-jjms+hn5ca2)0v+rxv0&$x#*3caz39'
+SECRET_KEY = getenv(
+    "DJANGO_SECRET_KEY",
+    'django-insecure-hq&wo0*nl!*is-vpr^o-jjms+hn5ca2)0v+rxv0&$x#*3caz39',
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv("DJANGO_DEBUG", 1) == "1"
 
 ALLOWED_HOSTS = [
     "0.0.0.0",
     "127.0.0.1",
-]
+] + getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
+
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
@@ -114,7 +122,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',    ##было при разработке проекта
+        'NAME': DATABASE_DIR / 'db.sqlite3',    ##для переноса на сервер и запуска проекта
     }
 }
 
@@ -243,3 +252,29 @@ LOGGING = {
         "level": "INFO",
     },
 }
+
+LOGLEVEL = getenv("DJANGO_LOGLEVEL", "info").upper()
+
+logging.config.dictConfig({
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "console": {
+            "format": "%(asctime)s %(levelname)s [%(name)s:%(lineno)s] %(module)s %(message)s",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "console",
+        },
+    },
+    "loggers": {
+        "": {
+            "level": LOGLEVEL,
+            "handlers": [
+                "console",
+            ],
+        },
+    },
+})
