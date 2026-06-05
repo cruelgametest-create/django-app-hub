@@ -5672,3 +5672,5 @@ AttributeError: 'AnonymousUser' object has no attribute 'profile'
 2026-05-20 09:20:02,571 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2026-05-20 09:20:37,818 [INFO] django.utils.autoreload: /home/cruel/PycharmProjects/python_django/LinuxIntro/mysite/mysite/settings.py changed, reloading.
 2026-05-20 09:20:38,622 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-06-05 07:26:59,105 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-06-05 07:32:53,075 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
